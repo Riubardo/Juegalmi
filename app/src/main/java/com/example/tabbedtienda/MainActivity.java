@@ -3,6 +3,7 @@ package com.example.tabbedtienda;
 import static com.example.tabbedtienda.retrofit.LlamadasBBDD.getPosts;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.example.tabbedtienda.databinding.ActivityMainBinding;

@@ -2,6 +2,7 @@ package com.example.tabbedtienda.ui.home;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,9 +17,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.tabbedtienda.LoginDialogFragment;
 import com.example.tabbedtienda.R;
 import com.example.tabbedtienda.databinding.FragmentHomeBinding;
+import com.example.tabbedtienda.ui.datos.RetroFittLlamadas;
 import com.example.tabbedtienda.ui.models.Plataforma;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class HomeFragment extends Fragment {
 
@@ -47,6 +56,8 @@ public class HomeFragment extends Fragment {
 		rvLayoutManger = new LinearLayoutManager(getActivity());
 		recyclerView.setLayoutManager(rvLayoutManger);
 
+		listaPlataformas = homeViewModel.devuelveLista();
+
 		rvAdapter = new AdaptadorPlataforma(this, listaPlataformas);
 		recyclerView.setAdapter(rvAdapter);
 
@@ -64,13 +75,6 @@ public class HomeFragment extends Fragment {
 
 	}
 
-	private ArrayList<Plataforma> devuelveLista(){
-		return listaPlataformas;
-	}
-
-	private void loadPlataformas(){
-
-	}
 
 	@Override
 	public void onAttach(@NonNull Context context) {
