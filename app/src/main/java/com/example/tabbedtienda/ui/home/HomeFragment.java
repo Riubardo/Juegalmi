@@ -1,33 +1,21 @@
 package com.example.tabbedtienda.ui.home;
 
-import static com.example.tabbedtienda.retrofit.LlamadasBBDD.getPosts;
-
 import android.content.Context;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tabbedtienda.LoginDialogFragment;
 import com.example.tabbedtienda.R;
 import com.example.tabbedtienda.databinding.FragmentHomeBinding;
-import com.example.tabbedtienda.ui.datos.ModelajeJSON;
-import com.example.tabbedtienda.ui.datos.VolleyGET;
 import com.example.tabbedtienda.ui.models.Plataforma;
 
 import java.util.ArrayList;
@@ -95,7 +83,6 @@ public class HomeFragment extends Fragment {
 
 	private ArrayList<Plataforma> devuelveLista(){
 		//String supuestoResponse = VolleyGET.crearRequest("plataformas/stock").toString();
-		ArrayList<Plataforma> listaPlataformas = VolleyGET.crearRequest("plataformas/stock");
 
 		//ArrayList<Plataforma> listaPlataformas = getPosts();
 		//Log.e("", "DevuelveLista tiene en lista:" + listaPlataformas.size());
