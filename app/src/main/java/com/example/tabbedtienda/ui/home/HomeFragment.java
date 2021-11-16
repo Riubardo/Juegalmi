@@ -40,19 +40,6 @@ public class HomeFragment extends Fragment {
 	}
 
 	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		/*
-		homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
-		binding = FragmentHomeBinding.inflate(inflater, container, false);
-		View root = binding.getRoot();
-		final TextView textView = binding.tvHome;
-		homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-			@Override
-			public void onChanged(@Nullable String s) {
-				textView.setText(s);
-			}
-		});
-		return root;
-		*/
 		View view = inflater.inflate(R.layout.fragment_home, null);
 
 		// RecyclerView Categoria Setup
@@ -60,8 +47,6 @@ public class HomeFragment extends Fragment {
 		rvLayoutManger = new LinearLayoutManager(getActivity());
 		recyclerView.setLayoutManager(rvLayoutManger);
 
-		//listaPlataformas = new ArrayList<>();
-		listaPlataformas = devuelveLista();
 		rvAdapter = new AdaptadorPlataforma(this, listaPlataformas);
 		recyclerView.setAdapter(rvAdapter);
 
@@ -75,17 +60,11 @@ public class HomeFragment extends Fragment {
 			}
 		});
 
-		//loadPlataformas(); <- vacio, mas adelante cargar datos acá
-
 		return view;
 
 	}
 
 	private ArrayList<Plataforma> devuelveLista(){
-		//String supuestoResponse = VolleyGET.crearRequest("plataformas/stock").toString();
-
-		//ArrayList<Plataforma> listaPlataformas = getPosts();
-		//Log.e("", "DevuelveLista tiene en lista:" + listaPlataformas.size());
 		return listaPlataformas;
 	}
 
