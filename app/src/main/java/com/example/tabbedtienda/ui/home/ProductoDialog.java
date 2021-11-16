@@ -44,7 +44,7 @@ public class ProductoDialog extends DialogFragment {
 		this.fragment = fragment;
 		this.videojuego = videojuego;
 	}
-
+//Comentario
 	@Override
 	public void onCancel(DialogInterface dialog) { super.onCancel(dialog); }
 
