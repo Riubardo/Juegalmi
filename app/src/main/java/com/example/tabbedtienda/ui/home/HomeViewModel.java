@@ -1,0 +1,24 @@
+package com.example.tabbedtienda.ui.home;
+
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
+
+import com.example.tabbedtienda.ui.models.Plataforma;
+
+import java.util.ArrayList;
+
+public class HomeViewModel extends ViewModel {
+
+	private ArrayList<Plataforma> listaPlataformas;
+	private MutableLiveData<String> mText;
+
+	public HomeViewModel() {
+		mText = new MutableLiveData<>();
+		mText.setValue("This is home fragment");
+	}
+
+	public LiveData<String> getText() {
+		return mText;
+	}
+}
